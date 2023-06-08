@@ -1,0 +1,65 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Первый герой",
+      "description": "Первый герой в рейтинге!",
+      "element": "fire"
+    },
+    {
+      "id": 2,
+      "name": "Неизвестный герой",
+      "description": "Скрывающийся в тени",
+      "element": "wind"
+    },
+    {
+      "id": 3,
+      "name": "Морской герой",
+      "description": "Как аквамен, но не из DC",
+      "element": "water"
+    },
+    {
+      "id": "3861f653-eaf4-4fc4-98e9-52b8a343d1c1",
+      "name": "Земляника",
+      "description": "Любит собирать ",
+      "element": "earth"
+    }
+  ],
+  "filters": [
+    {
+      "id": 1,
+      "className": "btn-outline-dark",
+      "element": "all",
+      "label": "Все",
+      "description": "Я владею элементом"
+    },
+    {
+      "id": 2,
+      "className": "btn-danger",
+      "element": "fire",
+      "label": "Огонь",
+      "description": "Огонь"
+    },
+    {
+      "id": 3,
+      "className": "btn-primary",
+      "element": "water",
+      "label": "Вода",
+      "description": "Вода"
+    },
+    {
+      "id": 4,
+      "className": "btn-success",
+      "element": "wind",
+      "label": "Ветер",
+      "description": "Ветер"
+    },
+    {
+      "id": 5,
+      "className": "btn-secondary",
+      "element": "earth",
+      "label": "Земля",
+      "description": "Земля"
+    }
+  ]
+}
