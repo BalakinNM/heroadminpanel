@@ -1,28 +1,29 @@
-import { useDispatch } from 'react-redux';
+import { useHttp } from '../../hooks/http.hook';
+
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-
-import { fetchFilters, selectAll } from '../heroesFilters/filterSlice'; 
+import { fetchFilters, selectAll} from '../heroesFilters/filterSlice';
 import { heroCreated, } from '../heroesList/heroesSlice'
-import store from '../../store';
 
-import { useHttp } from '../../hooks/http.hook';
+
 
 const HeroesAddForm = () => {
     const [heroName, setHeroName] = useState('');
     const [heroDescr, setHeroDescr] = useState('');
     const [heroElement, setHeroElement] = useState('');
-    const filters = selectAll(store.getState())
-    const {request} = useHttp()
+
+    const filters = useSelector(selectAll)
+
     const dispatch = useDispatch()
+    const {request} = useHttp()
 
     useEffect(() => {
-        dispatch(fetchFilters())
+        dispatch(fetchFilters(request))
             // eslint-disable-next-line
     }, [])
 
 
-    
     const onSubmitHandler = (e) => {
         e.preventDefault();
         const newHero = {
@@ -41,7 +42,6 @@ const HeroesAddForm = () => {
         setHeroElement('');
     }
     const renderOptions = (options) => {
-
         return options.map(filter => {
             return <option key={filter.id} value={filter.element}>{filter.description}</option>
         })
